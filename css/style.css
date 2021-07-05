@@ -1,0 +1,111 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    color: #4c6986;
+}
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.wrapper{
+    
+    height: 700px;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+h1{
+    font-size: 40px;
+    font-weight: bold;
+}
+.restart{
+    width: 180px;
+    border: 2px solid #4c6986;
+    height: 40px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.restart:hover{
+    background-color: #4c6986;
+    color: white;
+    width: 200px;
+    height: 50px;
+}
+
+.header{
+    display: flex;
+    color: #8a8a8a;
+    font-size: 24px;
+}
+.header .player-o{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    border-bottom:1px solid #4c69863d;
+}
+.header .player-x{
+    flex: 1;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    border-bottom:1px solid #4c69863d;
+}
+
+.player-o.active{
+    color: #d7badf;
+    border-color: #d7badf;
+}
+.player-x.active{
+    color: #5fa6ec;
+    border-color: #5fa6ec;
+}
+.game{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+.board{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 0px;
+    flex-grow: 1;
+    padding: 10px
+}
+.board-tile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    border-right: 3px solid #a5bdd4;
+    border-bottom: 3px solid #a5bdd4;
+    cursor: pointer;
+}
+.board-tile.clicked-by-x{
+    color: #5fa6ec;
+}
+.board-tile.clicked-by-o{
+    color: #d7badf;
+}
+.board-tile:nth-child(3n){
+    border-right: none;
+}
+.board-tile:nth-child(n+7){
+    border-bottom: none;
+}
+
+.board-tile:hover{
+    background-color: #eee;
+}
+.board-tile.winner-tiles{
+    color: rgb(40, 202, 135);
+}
